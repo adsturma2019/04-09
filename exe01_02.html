@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista Feira</title>
+</head>
+<body>
+    <h2>Lista de Frutas</h2>
+    <ol>
+        <li><img src="./imgs/abacaxi.png" width="48" height="48"> Abacaxi</li>
+        <li><img src="./imgs/limao.png" width="48" height="48"> Limão</li>
+        <li><img src="./imgs/maca.png" width="48" height="48"> Maçã</li>
+        <li><img src="./imgs/pera.png" width="48" height="48"> Pera</li>
+    </ol>
+    
+    <style>
+    table, th, td{
+        border: 1px solid black;
+    }
+    th{
+        background-color: #1C1C1C;
+    }
+    </style>
+
+
+    <table width="400">
+
+        <tr>
+            <th colspan="3" ><font color="white">
+                <h2>Tabela de Preços</h2></font></th>
+        </tr>
+
+        <tr bgcolor="#808080">
+            <th>Imagem</th>
+            <th>Produto</th>
+            <th>Valor</th>
+        </tr>
+
+        <tr><!-- linha 01 -->
+            <td><img src="./imgs/abacaxi.png" width="48" height="48"></td>
+            <td>Abacaxi</td>
+            <td class="valor">10,99</td>
+        </tr>
+
+        <tr><!-- linha 01 -->
+            <td><img src="./imgs/limao.png" width="48" height="48"></td>
+            <td>Limão</td>
+            <td class="valor">3,99</td>
+        </tr>
+
+        <tr><!-- linha 01 -->
+            <td><img src="./imgs/maca.png" width="48" height="48"></td>
+            <td>Maçã</td>
+            <td class="valor">8,00</td>
+        </tr>
+
+        <tr><!-- linha 01 -->
+            <td><img src="./imgs/pera.png" width="48" height="48"></td>
+            <td>Pera</td>
+            <td class="valor">7,50</td>
+        </tr>
+
+        <tr bgcolor="#DCDCDC">    
+            <td colspan="2">Total R$</td>
+            <td id="total">0.00</td>
+        </tr>
+
+    </table>
+
+    <br>
+    <button onClick="Calcular()">Calcular</button>
+
+    <script>
+
+        function Calcular(){
+            var valores = document.getElementsByClassName("valor");
+            var valortotal = 0;
+            [].forEach.call(valores, function(valor){
+                valortotal += parseFloat(String(valor.innerHTML).replace(",","."));
+            });
+
+            document.getElementById("total").innerHTML = valortotal;
+
+        };
+    
+    </script>    
+</body>
+</html>
